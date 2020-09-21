@@ -1,0 +1,20 @@
+"use strict";
+
+var body = document.querySelector('body');
+var eraser;
+var vw = window.innerWidth;
+$('body').on('mousedown', function (event) {
+  eraser = document.createElement('span');
+  $('body').on('mousemove', function (event) {
+    eraser = document.createElement('span');
+    eraser.style.left = event.clientX - vw * 4 / 100 + 'px';
+    eraser.style.top = event.clientY - vw * 4 / 100 + 'px';
+    body.appendChild(eraser);
+    setTimeout(function () {
+      document.querySelector('span').remove();
+    }, 1000);
+  });
+  $('body').on('mouseup', function (event) {
+    $('span').remove();
+  });
+});
