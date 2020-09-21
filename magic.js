@@ -1,8 +1,6 @@
 const body = document.querySelector('body');
 let eraser;
 const vw = window.innerWidth;
-$('body').on('mousedown', function (event) {
-    eraser = document.createElement('span');
 
     $('body').on('mousemove', function (event) {
         eraser = document.createElement('span');
@@ -13,7 +11,6 @@ $('body').on('mousedown', function (event) {
             document.querySelector('span').remove();
         }, 1000);
 
-    });
     $('body').on('mouseup', function (event) {
 
         $('span').remove();
