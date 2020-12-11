@@ -7,11 +7,13 @@
     <title>Baarish</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <script  src="Jquery/jquery.min.js"></script>
+    <script src="Jquery/jquery.min.js"></script>
 </head>
 
 <body>
-    <div id="img"></div>
+    <div class="loading">
+        <h1>Loading...</h1>
+    </div>
     <video src="img/Pexels_Videos_3839.mp4" autoplay muted loop></video>
     <nav>
         <h2>
@@ -29,7 +31,19 @@
     <main id="enticing_text">
         <h2>Lorem Epsum</h2>
     </main>
-    <script  src="magic.js"></script>
+    <script src="magic.js"></script>
+    <script>
+        window.onload = () => {
+            setTimeout(() => {
+                const loading = document.querySelector('.loading');
+                loading.style.opacity = 0;
+                loading.addEventListener('transitionend', () => {
+                    loading.style.display = 'none';
+                })
+            }, 1000)
+
+        }
+    </script>
 </body>
 
 </html>
